@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div *ngFor="let room of rooms" class="room-card" [class.expanded]="room.isExpanded">
+    <div class="room-image">
+      <img [src]="room.imageUrl" alt="Room Image">
+    </div>
+    <div class="room-content">
+      <h3 class="room-title">{{ room.title }}</h3>
+      <p class="room-description">{{ room.description }}</p>
+      <button class="expand-button" (click)="toggleExpansion(room)">
+        <i class="fa" [ngClass]="{'fa-chevron-down': !room.isExpanded, 'fa-chevron-up': room.isExpanded}"></i>
+      </button>
+    </div>
+    <div class="room-details" *ngIf="room.isExpanded">
+      <h4>Detaylar</h4>
+      <p>{{ room.details }}</p>
+    </div>
+  </div>  
+<app-footer></app-footer>

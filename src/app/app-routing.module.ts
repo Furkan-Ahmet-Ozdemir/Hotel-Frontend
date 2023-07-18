@@ -7,6 +7,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { RezervationComponent } from './rezervation/rezervation.component';
 import { ReservationInquiryComponent } from './reservation-inquiry/reservation-inquiry.component';
+import { RoomsComponent } from './rooms/rooms.component';
 
 
 const routes: Routes =[
@@ -33,6 +34,10 @@ const routes: Routes =[
   {
     path: 'rezervasyon-sorgulama',
     component: ReservationInquiryComponent
+  },
+  {
+    path: 'odalar',
+    component: RoomsComponent
   }
     
   

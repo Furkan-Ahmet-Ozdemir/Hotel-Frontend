@@ -1,0 +1,87 @@
+.room-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 120px;
+  }
+  
+  .room-card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .room-card.expanded {
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .room-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .room-content {
+    flex: 1;
+  }
+  
+  .room-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .room-description {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .expand-button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Yeni satır */
+    align-items: center; /* Yeni satır */
+  }
+  
+  .expand-icon {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .room-details {
+    margin-top: 10px;
+    display: none;
+  }
+  
+  .room-details h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .room-details p {
+    margin-bottom: 10px;
+  }
+  
