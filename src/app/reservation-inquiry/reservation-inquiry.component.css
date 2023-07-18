@@ -1,0 +1,25 @@
+.reservation-container {
+    width: 60%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
+  
+  .data-input {
+    
+    height: 50px;
+    margin-bottom: 10px;
+    width: 500px; 
+    padding: 10px;
+  }
+  
+  .submit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #ccc;
+  }
+  

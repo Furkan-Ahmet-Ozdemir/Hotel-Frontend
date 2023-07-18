@@ -1,0 +1,77 @@
+/* body.component.css */
+.about-section {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.about-description {
+  width: 48%;
+  margin: 10px;
+  padding: 10px;
+  margin-right: 150px;
+  font-size: 17px;
+  position: relative;
+  
+}
+
+.about-description h2 {
+  font-weight: bold;
+  text-align: left;
+}
+.left-aligned-hr {
+  margin: 0;
+  border: none;
+  border-top: 1px solid black;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.about-photos img {
+  width: 48%;
+  height: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 280px;
+  border-radius: 15px;
+}
+.about-description .contact-button {
+  margin: 10px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+  display: inline-block;
+  
+}
+
+.about-description .contact-button:hover {
+  background-color: #ccc;
+}
+
+.about-section-2 {
+  display: flex;
+  width: 99.9%;
+  align-items: center;
+  margin: 10px;
+  background-color: #f0eeee;
+}
+
+.about-description-2 {
+  width: 48%;
+  margin: 10px;
+  padding: 10px;
+  margin-left: 190px;
+  font-size: 17px;
+}
+.about-photos-2 img {
+  width: 60%;
+  height: 60%;
+  margin-left: 80px;
+  border-radius: 15px;
+}

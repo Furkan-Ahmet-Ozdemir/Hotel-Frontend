@@ -1,0 +1,64 @@
+{
+    "rooms":[
+
+
+
+        {
+            "name":"room1",
+            "id":"1",
+            "description":"room1",
+            "exits":{
+                "north":"2",
+                "south":"3",
+                "east":"4",
+                "west":"5"
+            }
+        },
+        {
+            "name":"room2",
+            "id":"2",
+            "description":"room2",
+            "exits":{
+                "south":"1"
+            }
+        },
+        {
+            "name":"room3",
+            "id":"3",
+            "description":"room3",
+            "exits":{
+                "north":"1"
+            }
+        },
+        {
+            "name":"room4",
+            "id":"4",
+            "description":"room4",
+            "exits":{
+                "west":"1"
+            }
+        },
+        {
+            "name":"room5",
+            "id":"5",
+            "description":"room5",
+            "exits":{
+                "east":"1"
+            }
+        }
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

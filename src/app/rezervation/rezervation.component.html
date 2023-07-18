@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div>
+<div class="rezervation-main">
+        
+    <div class="rezervation-form-main">
+        <form class="rezervation-form" (ngSubmit)="sendName()" method="post">
+            <fieldset>
+                
+                 <!-- <mat-form-field>
+                    <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" [(ngModel)]="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startDatePicker></mat-datepicker>
+                </mat-form-field>
+                  
+                <mat-form-field>
+                    <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" [(ngModel)]="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endDatePicker></mat-datepicker>
+                </mat-form-field>  -->
+
+                <!-- <div class="form-group">
+                    <input type="number" placeholder="Yetişken Sayısı" [(ngModel)]="number" min="0">
+                    <input type="number" placeholder="Çocuk sayısı" min="0">
+                    
+                </div> -->
+    
+                <div class="form-group">
+                    <input type="text" name="name" id="name" [(ngModel)]="name" placeholder="Adınız">
+                    <input type="text" name="form-surname" [(ngModel)]="surName" placeholder="Soyadınız">
+                </div>
+    
+                <div class="form-group">
+                    <input type="text" name="form-phone" [(ngModel)]="phoneNumber" placeholder="Telefon numarası" maxlength="11">
+                    <input type="text" name="form-tc" [(ngModel)]="tc" placeholder="T.C. Kimlik No" maxlength="11">
+                    <input type="email" name="form-email" [(ngModel)]="email" placeholder="Email Adresiniz">
+                </div>
+    
+                
+                <div class="form-group">
+                    <input type="submit" value="Gönder">
+                </div>
+            </fieldset>
+        </form> 
+    </div>
+
+    <div class="rooms">
+
+        <div class="room-group">
+            <div class="room-card-container">
+                <div *ngFor="let room of rooms" class="room-card" >
+                <img [src]="room.mainPicturePath" [alt]="room.roomName" class="room-image">
+                <h3 class="room-title">{{ room.roomName }}</h3>
+                <p class="room-description">{{ room.description }}</p>
+                <p class="room-price">{{room.price}}</p>            
+                </div>
+            </div>
+    </div>
+
+</div>
+
+
+</div>
+<app-footer></app-footer>
+
+
+
+
