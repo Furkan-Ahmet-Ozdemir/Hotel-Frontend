@@ -38,7 +38,11 @@ const routes: Routes =[
   {
     path: 'odalar',
     component: RoomsComponent
-  }
+  },
+  {
+    path: 'iletisim',
+    component: ContactComponent
+  },
     
   
 ]

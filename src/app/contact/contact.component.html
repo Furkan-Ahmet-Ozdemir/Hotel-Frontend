@@ -1,1 +1,45 @@
-<p>contact works!</p>
+<app-navbar></app-navbar>
+<div class="about-section-2">
+  
+    <div class="about-description-2">
+      <h2>Sık Sorulan Sorular</h2>
+      <hr class="left-aligned-hr">
+        <p>Aradağınız sorunun cevabı belki de sık sorulan sorular(S.S.S.) sayfasında olabilir. </p>
+        <p>Sık sorulan sorular sayfasını kontrol ettiniz mi?</p>
+        <p>Eğer sorunuzun cevabı S.S.S'da yoksa bizimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.</p>
+        <button class="about-button-2">Sık Sorulan Sorular</button>
+        </div>
+      <div class="about-photos-2">
+        <img src="assets/5.jpg" alt="Otel Fotoğrafı 1">
+      </div>
+  </div>
+<form (ngSubmit)="submitForm()">
+    <h2>İletişim Formu</h2>
+    <div>
+      <label for="firstName">Ad:</label>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+    </div>
+  
+    <div>
+      <label for="lastName">Soyad:</label>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+    </div>
+  
+    <div>
+      <label for="email">E-posta Adresi:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required>
+    </div>
+  
+    <div>
+      <label for="phoneNumber">Telefon Numarası:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required>
+    </div>
+  
+    <div>
+      <label for="message">Mesaj:</label>
+      <textarea id="message" name="message" [(ngModel)]="message" required></textarea>
+    </div>
+  
+    <button type="submit">Gönder</button>
+  </form>
+<app-footer></app-footer>

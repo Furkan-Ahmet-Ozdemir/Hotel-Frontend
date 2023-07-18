@@ -1,0 +1,71 @@
+/* contact.component.css */
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    text-align: left; /* Solda hizalama */
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ddd;
+    color: #000;
+    border: 1px solid #888;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  .about-section-2 {
+    display: flex;
+    width: 99.9%;
+    align-items: center;
+    margin: 10px;
+    background-color: #f0eeee;
+  }
+  
+  .about-description-2 {
+    width: 48%;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 190px;
+    font-size: 17px;
+  }
+  .about-photos-2 img {
+    width: 45%;
+    height: 45%;
+    margin-left: 350px;
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+  p{
+    text-align: left;
+    margin-top: 20px;
+  }
+  .about-button-2{
+    margin-top: 20px;
+
+  }
+  
