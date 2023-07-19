@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ContactForm } from './models/contactform.model';
+import { ReservationCheck } from './models/reservationcheck.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservationService {
 
-  // constructor() { }
-  private reserC:ReservationCheck;
+  private reserC! :ReservationCheck;
 
   private usersUrl: string;
 
@@ -16,11 +15,10 @@ export class ReservationService {
     this.usersUrl = "http://localhost:8080/reservations/save";
   }
 
-  public save(contactForm: ContactForm):any {
-    console.log(contactForm);
-    // return this.http.post<any>(this.usersUrl, contactForm);
+  public save(reservationcheck: ReservationCheck):any {
+    console.log(reservationcheck);
 
-    return this.http.post<any>(this.usersUrl, contactForm)
+    return this.http.post<any>(this.usersUrl, reservationcheck)
     .subscribe(
       response => {
         console.log('API post successful:', response);
