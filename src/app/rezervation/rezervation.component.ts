@@ -53,8 +53,7 @@ export class RezervationComponent{
     this.userService.findAll();
     console.log(this.phoneNumber);
     this.userService.findRooms2();
-    console.log("karpuz");
-    console.log(this.rooms);
+
   }
 
   gotoUserList() {
