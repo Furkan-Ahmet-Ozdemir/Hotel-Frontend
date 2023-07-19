@@ -40,7 +40,7 @@ export class UserService {
   
   
   public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
+    return this.http.post<User>("http://localhost:8080/reservations/save", user);
   }
 
 //   public findRooms(): RoomType[] {
