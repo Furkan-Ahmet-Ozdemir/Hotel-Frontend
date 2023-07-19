@@ -6,7 +6,7 @@
 
 .rezervation-main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     min-height: 100vh;
@@ -28,31 +28,40 @@
     margin: 0 auto;
     padding: 1rem;
   }
+
+  fieldset{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    width: 100%;
+    gap:20px;
+  }
   
   .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-bottom: 20px;
+    width: 100%;
+    flex:1;
   }
   
   .form-group input[type="text"],
   .form-group input[type="email"],
-  .form-group input[type="submit"],
-  .form-group input[type="number"] {
+  .form-group input[type="number"],
+  .rezervation-btn {
     padding: 0.75rem 1rem;
     border: 1px solid #d1d5db;
     border-radius: 0.375rem;
     font-size: 0.875rem;
   }
   
-  .form-group input[type="submit"] {
+  .rezervation-btn {
     background-color: #2563eb;
     color: white;
     cursor: pointer;
   }
   
-  .form-group input[type="submit"]:hover {
+  .rezervation-btn:hover {
     background-color: #1d4ed8;
   }
   .room-card.selected {

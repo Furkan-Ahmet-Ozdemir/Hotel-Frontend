@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
 })
 export class ReservationPopupComponent {
 
-  userSer:UserService;
+  //userSer:UserService;
   guestOptions: number[] = [0, 1, 2, 3, 4];
 
   reservationForm = new FormGroup({
@@ -23,7 +23,7 @@ export class ReservationPopupComponent {
     this.reservationPayload = this.reservationForm.getRawValue();
     
     console.log(this.reservationForm.value);
-    userSer.save()
+    //userSer.save()
 
 
 

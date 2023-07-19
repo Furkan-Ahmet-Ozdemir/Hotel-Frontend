@@ -1,3 +1,8 @@
+.room-cards{
+  display:flex;
+  flex-direction: row;
+
+}
 .room-card {
     display: flex;
     align-items: center;
@@ -12,6 +17,7 @@
     margin-left: auto;
     margin-right: auto;
     min-height: 120px;
+    flex-direction: column;
   }
   
   .room-card:hover {
@@ -24,8 +30,8 @@
   }
   
   .room-image {
-    width: 80px;
-    height: 80px;
+    width: 400px;
+    height: 400px;
     flex-shrink: 0;
     margin-right: 10px;
     border-radius: 4px;
@@ -45,8 +51,9 @@
   .room-title {
     font-size: 18px;
     font-weight: bold;
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
   }
   
   .room-description {
@@ -64,6 +71,8 @@
     margin: 0;
     display: flex; /* Yeni satır */
     align-items: center; /* Yeni satır */
+    justify-content: center;
+    width: 100%;
   }
   
   .expand-icon {
@@ -85,3 +94,10 @@
     margin-bottom: 10px;
   }
   
+  @media screen and (max-width: 1440px){
+      .room-image{
+        width: 200px;
+        height: 200px;
+      }
+
+  }

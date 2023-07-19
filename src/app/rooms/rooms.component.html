@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<div class="room-cards">
 <div *ngFor="let room of rooms" class="room-card" [class.expanded]="room.isExpanded">
     <div class="room-image">
       <img [src]="room.imageUrl" alt="Room Image">
@@ -15,4 +16,5 @@
       <p>{{ room.details }}</p>
     </div>
   </div>  
+</div>
 <app-footer></app-footer>
