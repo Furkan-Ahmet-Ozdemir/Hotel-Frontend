@@ -6,6 +6,8 @@ export class User {
     tc!: string;
     surName!: string;
     email!: string;
-    
+    checkInDate!: Date;
+    checkOutDate!: Date;
+    customerCount!: number;
     
   }

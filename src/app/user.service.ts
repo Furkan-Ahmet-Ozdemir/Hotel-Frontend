@@ -38,6 +38,10 @@ export class UserService {
     return this.http.get("http://localhost:8080/roomType/getAll");
   }
   
+  
+  public save(user: User) {
+    return this.http.post<User>(this.usersUrl, user);
+  }
 
 //   public findRooms(): RoomType[] {
 
@@ -74,7 +78,4 @@ export class UserService {
 
 
 
-  public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
-  }
 }

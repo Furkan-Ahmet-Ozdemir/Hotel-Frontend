@@ -34,6 +34,9 @@ export class RezervationComponent{
   surName: string= "";
   email: string= "";
   rooms = this.userService.findRooms2();
+  checkInDate = Date;
+  checkOutDate = Date;
+  customerCount = 0;
   sendName(){
     console.log(this.name)
 
@@ -42,6 +45,9 @@ export class RezervationComponent{
     this.user.tc = this.tc;
     this.user.surName = this.surName;
     this.user.email = this.email;
+    this.checkInDate = this.checkInDate;
+    this.checkOutDate = this.checkOutDate;
+    this.customerCount = this.customerCount;
 
     this.userService.save(this.user).subscribe(result => this.gotoUserList());
     this.userService.findAll();
