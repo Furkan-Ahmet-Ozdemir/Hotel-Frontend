@@ -25,6 +25,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ReservationPopupComponent } from './reservation-popup/reservation-popup.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -62,6 +63,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatNativeDateModule,
     MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
