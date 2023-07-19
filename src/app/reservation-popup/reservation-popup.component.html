@@ -1,13 +1,13 @@
 <form>
     
     <mat-form-field>
-        <input matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" [(ngModel)]="startDate">
+        <input matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" [(ngModel)]="startDate" name="startDate">
         <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #startDatePicker></mat-datepicker>
       </mat-form-field>
-      
+    
       <mat-form-field>
-        <input matInput [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" [(ngModel)]="endDate">
+        <input matInput [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" [(ngModel)]="endDate" name="endDate">
         <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #endDatePicker></mat-datepicker>
       </mat-form-field>
@@ -15,13 +15,13 @@
     
     <mat-form-field>
         <mat-select [(ngModel)]="numberOfGuests">
-          <mat-option *ngFor="let option of guestOptions" [value]="option">
+          <mat-option *ngFor="let option of guestOptions" [value]="option"  name="option">
             {{ option }}
           </mat-option>
         </mat-select>
     </mat-form-field>
       
   
-    <button type="submit">Filtrele</button>
+    <button type="submit" (click)="onSubmit()">Filtrele</button>
   </form>
   
