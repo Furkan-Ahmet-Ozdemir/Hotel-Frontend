@@ -1,0 +1,27 @@
+<form>
+    
+    <mat-form-field>
+        <input matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" [(ngModel)]="startDate">
+        <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" [(ngModel)]="endDate">
+        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #endDatePicker></mat-datepicker>
+      </mat-form-field>
+      
+    
+    <mat-form-field>
+        <mat-select [(ngModel)]="numberOfGuests">
+          <mat-option *ngFor="let option of guestOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+      
+  
+    <button type="submit">Filtrele</button>
+  </form>
+  

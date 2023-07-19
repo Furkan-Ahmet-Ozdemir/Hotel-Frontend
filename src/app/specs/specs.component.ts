@@ -21,8 +21,5 @@ export class SpecsComponent {
     { title: 'Klima', icon: 'ac_unit' },
     { title: 'Çamaşırhane Hizmeti', icon: 'local_laundry_service' },
     { title: 'Restoran', icon: 'restaurant_menu' },
-    { title: '24 Saat Resepsiyon', icon: 'local_convenience_store' },
-    { title: 'LCD TV', icon: 'tv' },
-    { title: 'Balkon veya Teras', icon: 'balcony' },
   ];
 }
