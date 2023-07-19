@@ -22,7 +22,6 @@ export class UserService {
   }
 
   public findAll(): void {
-
        this.http.get<User[]>("http://localhost:8080/invoiceguests").subscribe(
       (response) => {
         this.users = response; // Backendden gelen user nesnelerini users değişkenine ata
@@ -38,10 +37,10 @@ export class UserService {
     return this.http.get("http://localhost:8080/roomType/getAll");
   }
   
-  
   public save(user: User) {
     return this.http.post<User>("http://localhost:8080/reservations/save", user);
   }
+  
 
 //   public findRooms(): RoomType[] {
 

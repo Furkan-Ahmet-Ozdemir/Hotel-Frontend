@@ -3,6 +3,8 @@ import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from './user.model';
 import { RoomType } from '../models/roomtype.model';
+import { ReservationService } from '../reservation.service';
+import { ReservationCheck } from '../models/reservationcheck.model';
 
 interface Room {
   image: string;
@@ -19,11 +21,13 @@ interface Room {
 export class RezervationComponent{
 
   user: User;
+  reservat: ReservationCheck = new ReservationCheck;
 
   constructor(
     private route: ActivatedRoute, 
       private router: Router, 
-        private userService: UserService) {
+        private userService: UserService,
+        private reserV : ReservationService) {
     this.user = new User();
   }
 
@@ -65,10 +69,12 @@ export class RezervationComponent{
       this.rooms = Response});
   }
   
-  
-  
-  
-  
+  ngOnReservations(): void {
+    this.reserV.save(this.reservat).subscribe((Response: any)=>{
+      this.rooms = Response});
+  }
+
+
   room21: Room[] = [ 
     
     {
