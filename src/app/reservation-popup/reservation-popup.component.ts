@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-reservation-popup',
@@ -9,8 +10,14 @@ import { UserService } from '../user.service';
 })
 export class ReservationPopupComponent {
 
-  userSer:UserService;
+  private usersUrl: string;
+  userSer!: UserService;
   guestOptions: number[] = [0, 1, 2, 3, 4];
+
+  
+  constructor(private http: HttpClient) { 
+    this.usersUrl = 'http://localhost:8080/reservations/save';
+  }
 
   reservationForm = new FormGroup({
     startDate: new FormControl(''),
@@ -23,9 +30,19 @@ export class ReservationPopupComponent {
     this.reservationPayload = this.reservationForm.getRawValue();
     
     console.log(this.reservationForm.value);
-    userSer.save()
 
-
+    return this.http.post<any>(this.usersUrl, this.reservationForm.value)
+    .subscribe(
+      response => {
+        console.log('API post successful:', response);
+      },
+      error => {
+        console.error('API post error:', error);
+      }
+    );
+    
+    
+    // userSer.save();
 
     /*
     if (this.startDate && this.endDate) {
