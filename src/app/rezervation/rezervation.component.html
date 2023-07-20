@@ -1,6 +1,77 @@
-<app-navbar></app-navbar>
-<div>
-    <div class="rezervation-main">            
+<!-- <app-navbar></app-navbar>
+<div> -->
+
+    <!-- <div class="reservation-form">
+        <h2>Rezervasyon Sayfası</h2>
+      
+        <form [formGroup]="reservationForm" (ngSubmit)="submitReservation()">
+          <div class="form-group">
+            <mat-form-field>
+              <mat-label>Başlangıç Tarihi</mat-label>
+              <input matInput [matDatepicker]="startDatePicker" formControlName="startDate" required>
+              <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+      
+          <div class="form-group">
+            <mat-form-field>
+              <mat-label>Bitiş Tarihi</mat-label>
+              <input matInput [matDatepicker]="endDatePicker" formControlName="endDate" required>
+              <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #endDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+      
+          <div class="form-group">
+            <label for="person-count">Rezervasyon Yapılacak Kişi Sayısı:</label>
+            <select id="person-count" formControlName="personCount" required>
+              <option value="1">1 Kişi</option>
+              <option value="2">2 Kişi</option>
+              <option value="3">3 Kişi</option>
+              <option value="4">4 Kişi</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="room-type">Oda Tipi Seçiniz:</label>
+            <select id="room-type" formControlName="roomType" required>
+              <option value="standart">Standart Oda</option>
+              <option value="deluxe">Deluxe Oda</option>
+              <option value="suit">Suit Oda</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="first-name">Ad:</label>
+            <input type="text" id="first-name" formControlName="firstName" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="last-name">Soyad:</label>
+            <input type="text" id="last-name" formControlName="lastName" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="tc">TC Kimlik Numarası:</label>
+            <input type="text" id="tc" formControlName="tc" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" formControlName="email" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="phone">Telefon Numarası:</label>
+            <input type="tel" id="phone" formControlName="phone" required>
+          </div>
+      
+          <button type="submit">Rezervasyon Yap</button>
+        </form>
+      </div> -->
+
+    <!-- <div class="rezervation-main">            
         <div class="rezervation-form-main">
             <form #frm="ngForm" (ngSubmit)="sendCustomerInfo(frm.value)" > 
                 <mat-form-field>
@@ -42,6 +113,77 @@
                 
             </form> 
         </div>
+    </div> -->
+
+    <!-- <div class="rooms">
+
+        <div class="room-group">
+            <div class="room-card-container">
+                <div *ngFor="let room of rooms" class="room-card" >
+                <img [src]="room.mainPicturePath" [alt]="room.roomName" class="room-image">
+                <h3 class="room-title">{{ room.roomName }}</h3>
+                <p class="room-description">{{ room.description }}</p>
+                <p class="room-price">{{room.price}}</p>            
+                </div>
+            </div>
+    </div>
+
+</div>
+
+
+</div>
+<app-footer></app-footer> -->
+
+
+
+
+<app-navbar></app-navbar>
+<div>
+<div class="rezervation-main">
+        
+    <div class="rezervation-form-main">
+        <form class="rezervation-form" (click)="sendName()" [formGroup]="form" method="post">
+            <fieldset>
+        
+                 
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" formControlName="checkInDate">
+                        <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #startDatePicker></mat-datepicker>
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" formControlName="checkOutDate">
+                        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #endDatePicker></mat-datepicker>
+                    </mat-form-field>  
+                </div>
+                
+
+                <div class="form-group">
+                    <mat-form-field  >
+                        <mat-label>Kişi Sayısı</mat-label>
+                        <mat-select formControlName="customerCount">
+                          
+                            <mat-option *ngFor="let option of guestOptions" [value]="option" >
+                            {{option}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    <input type="text" name="name" id="name" formControlName="name" placeholder="Adınız">
+                    <input type="text" name="form-surname" [(ngModel)]="surName" placeholder="Soyadınız">
+                </div>
+    
+                <div class="form-group">
+                    <input type="text" name="form-phone" [(ngModel)]="phoneNumber" placeholder="Telefon numarası" maxlength="11">
+                    <input type="text" name="form-tc" [(ngModel)]="tc" placeholder="T.C. Kimlik No" maxlength="11">
+                    <input type="email" name="form-email" [(ngModel)]="email" placeholder="Email Adresiniz">
+                </div>
+            </fieldset>
+            <input type="submit" value="Gönder" class="rezervation-btn">
+        </form> 
+        <div *ngIf="form.invalid">adfasdfasfdas</div>
     </div>
 
     <div class="rooms">

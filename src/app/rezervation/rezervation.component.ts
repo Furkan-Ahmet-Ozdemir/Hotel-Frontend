@@ -5,6 +5,7 @@ import { User } from './user.model';
 import { ReservationService } from '../reservation.service';
 import { ReservationCheck } from '../models/reservationcheck.model';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 interface Room {
   image: string;
@@ -18,7 +19,7 @@ interface Room {
   templateUrl: './rezervation.component.html',
   styleUrls: ['./rezervation.component.css'],
 })
-export class RezervationComponent{
+export class RezervationComponent implements OnInit {
   startDatePicker: any;
   endDatePicker: any;
   guestOptions: number[] = [1, 2, 3, 4];
@@ -33,6 +34,14 @@ export class RezervationComponent{
     private reserV : ReservationService) {
     this.user = new User();
   }
+
+  form = new FormGroup({
+    checkInDate: new FormControl('', Validators.required),
+    checkOutDate: new FormControl(''),
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    customerCount: new FormControl('')
+  })
+
   sendCustomerInfo(data: any){
     console.log(data);
     
@@ -48,27 +57,14 @@ export class RezervationComponent{
   checkOutDate = Date;
   customerCount = 0;
   roomtype :  number=0;
+
+
   sendName(){
+    console.log(this.form.getRawValue())
 
-    
-
-    this.user.name = this.name;
-    this.user.surName = this.surName;
-    this.user.phoneNumber = this.phoneNumber;
-    this.user.tc = this.tc;
-    this.user.email = this.email;
-    this.checkInDate = this.checkInDate;
-    this.checkOutDate = this.checkOutDate;
-    this.customerCount = this.customerCount;
-
-    
-
-
-
-    // this.userService.save(this.user).subscribe(result => this.gotoUserList());
-    // this.userService.findAll();
-    // console.log(this.phoneNumber);
-    // this.userService.findRooms2();
+    if (this.form.valid) {
+      // this.reserV.sendReservation(this.form.getRawValue())
+    }
   }
   
 
@@ -79,6 +75,8 @@ export class RezervationComponent{
    
 
   }
+
+  
   
 
 
@@ -87,8 +85,11 @@ export class RezervationComponent{
   }
 
   ngOnInit(): void {
-    this.userService.findRooms2().subscribe((Response: any)=>{
-      this.rooms = Response});
+    // this.userService.findRooms2().subscribe((Response: any) => {
+    //   this.rooms = Response
+    // });
+
+
   }
   
   ngOnReservations(): void {
