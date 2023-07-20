@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from './user.model';
-import { RoomType } from '../models/roomtype.model';
 import { ReservationService } from '../reservation.service';
 import { ReservationCheck } from '../models/reservationcheck.model';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 interface Room {
   image: string;
@@ -19,23 +19,29 @@ interface Room {
   styleUrls: ['./rezervation.component.css'],
 })
 export class RezervationComponent{
+  startDatePicker: any;
+  endDatePicker: any;
   guestOptions: number[] = [1, 2, 3, 4];
   user: User;
-  reservat: ReservationCheck = new ReservationCheck;
+  reservat: ReservationCheck = new ReservationCheck; 
+
 
   constructor(
     private route: ActivatedRoute, 
-      private router: Router, 
-        private userService: UserService,
-        private reserV : ReservationService) {
+    private router: Router, 
+    private userService: UserService,
+    private reserV : ReservationService) {
     this.user = new User();
   }
-
+  sendCustomerInfo(data: any){
+    console.log(data);
+    
+  }
 
   name : string = "";
+  surName: string= "";
   phoneNumber: string= "";
   tc: string= "";
-  surName: string= "";
   email: string= "";
   rooms = this.userService.findRooms2();
   checkInDate = Date;
@@ -43,22 +49,26 @@ export class RezervationComponent{
   customerCount = 0;
   roomtype :  number=0;
   sendName(){
-    console.log(this.name)
+
+    
 
     this.user.name = this.name;
+    this.user.surName = this.surName;
     this.user.phoneNumber = this.phoneNumber;
     this.user.tc = this.tc;
-    this.user.surName = this.surName;
     this.user.email = this.email;
     this.checkInDate = this.checkInDate;
     this.checkOutDate = this.checkOutDate;
     this.customerCount = this.customerCount;
 
-    this.userService.save(this.user).subscribe(result => this.gotoUserList());
-    this.userService.findAll();
-    console.log(this.phoneNumber);
-    this.userService.findRooms2();
+    
 
+
+
+    // this.userService.save(this.user).subscribe(result => this.gotoUserList());
+    // this.userService.findAll();
+    // console.log(this.phoneNumber);
+    // this.userService.findRooms2();
   }
   
 

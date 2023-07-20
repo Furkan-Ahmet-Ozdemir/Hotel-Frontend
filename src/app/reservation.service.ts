@@ -30,6 +30,20 @@ export class ReservationService {
   }
 
 
+  public sendReservation(reservationcheck: ReservationCheck):any {
+    console.log(reservationcheck);
+
+    return this.http.post<any>(this.usersUrl, reservationcheck)
+    .subscribe(
+      response => {
+        console.log('API post successful:', response);
+      },
+      error => {
+        console.error('API post error:', error);
+      }
+    );
+  }
+
 
 
 

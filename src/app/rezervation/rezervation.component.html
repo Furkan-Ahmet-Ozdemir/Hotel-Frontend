@@ -1,49 +1,47 @@
 <app-navbar></app-navbar>
 <div>
-<div class="rezervation-main">
-        
-    <div class="rezervation-form-main">
-        <form class="rezervation-form" (ngSubmit)="sendName()" method="post">
-            <fieldset>
+    <div class="rezervation-main">            
+        <div class="rezervation-form-main">
+            <form #frm="ngForm" (ngSubmit)="sendCustomerInfo(frm.value)" > 
+                <mat-form-field>
+                    <input matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi">
+                    <mat-datepicker-toggle matIconSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startDatePicker></mat-datepicker>
+                  </mat-form-field>
+                  
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi">
+                    <mat-datepicker-toggle matIconSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endDatePicker></mat-datepicker>
+                  </mat-form-field>                  
+                <mat-label>Kişi Sayısı</mat-label>
+                <mat-select formControlName="customerCount">                    
+                    <mat-option *ngFor="let option of guestOptions" [value]="option" >
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+                <mat-form-field>
+                    <input type="text" name="name" id="name" ngModel placeholder="Adınız">
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" name="form-surname" ngModel placeholder="Soyadınız">   
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" name="form-phone" ngModel placeholder="Telefon numarası" maxlength="11"> 
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="text" name="form-tc" ngModel placeholder="T.C. Kimlik No" maxlength="11">  
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="email" name="form-email" ngModel placeholder="Email Adresiniz"> 
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="email" name="form-email" ngModel placeholder="type of room"> 
+                </mat-form-field>
+                <button class="rezervation-btn">Send</button>
                 
-                 <!-- 
-                    <div class="form-group">
-                        <mat-form-field>
-                        <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" [(ngModel)]="checkInDate">
-                        <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
-                        <mat-datepicker #startDatePicker></mat-datepicker>
-                    </mat-form-field>
-                    
-                    <mat-form-field>
-                        <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" [(ngModel)]="checkOutDate">
-                        <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
-                        <mat-datepicker #endDatePicker></mat-datepicker>
-                    </mat-form-field>  
-                 </div>
-                    -->
-
-                <div class="form-group">
-                    <mat-form-field  >
-                        <mat-label>Kişi Sayısı</mat-label>
-                        <mat-select formControlName="customerCount">
-                          
-                            <mat-option *ngFor="let option of guestOptions" [value]="option" >
-                            {{option}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                    <input type="text" name="name" id="name" [(ngModel)]="name" placeholder="Adınız">
-                    <input type="text" name="form-surname" [(ngModel)]="surName" placeholder="Soyadınız">
-                </div>
-    
-                <div class="form-group">
-                    <input type="text" name="form-phone" [(ngModel)]="phoneNumber" placeholder="Telefon numarası" maxlength="11">
-                    <input type="text" name="form-tc" [(ngModel)]="tc" placeholder="T.C. Kimlik No" maxlength="11">
-                    <input type="email" name="form-email" [(ngModel)]="email" placeholder="Email Adresiniz">
-                </div>
-            </fieldset>
-            <input type="submit" value="Gönder" class="rezervation-btn">
-        </form> 
+            </form> 
+        </div>
     </div>
 
     <div class="rooms">

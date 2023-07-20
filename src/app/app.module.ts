@@ -23,7 +23,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RoomsComponent } from './rooms/rooms.component';
-import { ReservationPopupComponent } from './reservation-popup/reservation-popup.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReservationQueryService} from "./reservation-inquiry.service";
@@ -47,7 +46,6 @@ const routes: Routes = [
     HomeComponent,
     ReservationQueryComponent,
     RoomsComponent,
-    ReservationPopupComponent,
     
   ],
   imports: [
