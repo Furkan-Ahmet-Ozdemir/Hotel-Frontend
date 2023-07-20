@@ -20,8 +20,8 @@ export class ReservationPopupComponent {
   }
 
   reservationForm = new FormGroup({
-    startDate: new FormControl(''),
-    endDate: new FormControl(''),
+    checkInDate: new FormControl(''),
+    checkOutDate: new FormControl(''),
     customerCount: new FormControl('')
   });
 
@@ -31,7 +31,7 @@ export class ReservationPopupComponent {
     
     console.log(this.reservationForm.value);
     //userSer.save()
-    return this.http.post<any>("http://localhost:8080/reservations/save", this.reservationForm.value)
+    return this.http.post<any>("http://localhost:8080/reservations/search", this.reservationForm.value)
     .subscribe(
       response => {
         console.log('API post successful:', response);

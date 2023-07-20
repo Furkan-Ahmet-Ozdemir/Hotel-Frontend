@@ -29,6 +29,7 @@ button {
 p {
   font-size: 16px;
   margin-bottom: 5px;
+  display: flex;
 }
 
 div[ngIf="showUserInfo"] {
@@ -37,4 +38,11 @@ div[ngIf="showUserInfo"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f0f0f0;
+}
+.resinfobox{
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  
 }

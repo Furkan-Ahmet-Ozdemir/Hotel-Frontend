@@ -41,6 +41,7 @@ export class RezervationComponent{
   checkInDate = Date;
   checkOutDate = Date;
   customerCount = 0;
+  roomtype :  number=0;
   sendName(){
     console.log(this.name)
 
@@ -59,6 +60,17 @@ export class RezervationComponent{
     this.userService.findRooms2();
 
   }
+  
+
+  sendRoomType(){
+
+
+    this.roomtype = this.roomtype;
+   
+
+  }
+  
+
 
   gotoUserList() {
     console.log("gonderim basarili");

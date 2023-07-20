@@ -1,24 +1,31 @@
 // reservation-info.ts
 
+import { InvoiceGuest } from "./models/invoiceguests.model";
+
 export class ReservationInfo {
-    name: string;
-    surname: string;
+
+  invoiceGuest: InvoiceGuest[];
+
+    checkInDate: Date;
+    checkOutDate: Date;
     phoneNumber: string;
-    identityNumber: string;
-    email: string;
-    // checkInDate: Date;
-    // checkOutDate: Date;
-    guestCount: number;
+    lenghtOfStay: number;
+    customerCount: number;
+    reservationCode: string;
+    status: boolean;
+    totalPrice: number;
+    
   
     constructor() {
-      this.name = '';
-      this.surname = '';
+      this.checkInDate = new Date;
+      this.checkOutDate = new Date;
       this.phoneNumber = '';
-      this.identityNumber = '';
-      this.email = '';
-    //   this.checkInDate = null;
-    //   this.checkOutDate = null;
-      this.guestCount = 1; // Varsayılan olarak 1 misafir
+      this.invoiceGuest = [];
+      this.lenghtOfStay = 0;
+      this.customerCount = 0;
+      this.reservationCode = "";
+      this.status = true;
+      this.totalPrice = 0;
     }
   }
   

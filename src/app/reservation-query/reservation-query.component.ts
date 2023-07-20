@@ -12,7 +12,7 @@ import { ReservationQueryService } from '../reservation-inquiry.service'; // Ser
 export class ReservationQueryComponent {
   reservationCode: string = '';
   userInfo: ReservationInfo;
-  showUserInfo: boolean = false;
+  showUserInfo: boolean = true;
 
   constructor(private ReservationQueryService: ReservationQueryService) {
     this.userInfo = new ReservationInfo();
@@ -23,6 +23,9 @@ export class ReservationQueryComponent {
       (response) => {
         this.userInfo = response;
         this.showUserInfo = true;
+        console.log(response);
+      
+        return response;
       },
       (error) => {
         console.error('Rezervasyon sorgulanamadı:', error);

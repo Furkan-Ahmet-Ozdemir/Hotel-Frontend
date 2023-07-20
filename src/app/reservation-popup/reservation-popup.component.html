@@ -1,13 +1,13 @@
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
     
     <mat-form-field>
-        <input formControlName="startDate" matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" name="startDate" required>
+        <input formControlName="checkInDate" matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" name="checkInDate" required>
         <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #startDatePicker></mat-datepicker>
       </mat-form-field>
     
       <mat-form-field>
-        <input matInput formControlName="endDate" [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" name="endDate" required>
+        <input matInput formControlName="checkOutDate" [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" name="checkOutDate" required>
         <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #endDatePicker></mat-datepicker>
       </mat-form-field>

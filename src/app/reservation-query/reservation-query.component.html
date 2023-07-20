@@ -6,12 +6,17 @@
 </div>
 
 <!-- Kullanıcıya ait bilgilerin gösterileceği alan -->
-<div *ngIf="showUserInfo">
-    <p>Ad: {{ userInfo.name }}</p>
-    <p>Soyad: {{ userInfo.surname }}</p>
-    <p>Email: {{ userInfo.email }}</p>
-    <p>Telefon: {{ userInfo.phoneNumber }}</p>
-    <p>Kimlik Numarası: {{ userInfo.identityNumber }}</p>
+<div class="resinfobox" *ngIf="reservationCode">
+    <h3>Rezervasyon Bilgileri</h3>
+    <p>Check In Date: {{ userInfo.checkInDate }}</p>
+    <p>Check Out Date: {{ userInfo.checkOutDate }}</p>
+    <p>Phone Number: {{ userInfo.phoneNumber }}</p> 
+    <p>Lenght Of Stay: {{ userInfo.lenghtOfStay }}</p>  
+    <p>Customer Count: {{ userInfo.customerCount }}</p> 
+    <p>Reservation Code: {{ userInfo.reservationCode }}</p>
+    <p>Status: {{ userInfo.status }}</p>
+    <p>Total Price: {{ userInfo.totalPrice }}</p>
+
     <!-- Kullanıcının rezervasyon tarih aralığı ve kişi sayısı gibi bilgileri buraya ekleyebilirsiniz. -->
 </div>
 
