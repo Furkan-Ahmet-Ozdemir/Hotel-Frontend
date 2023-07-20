@@ -10,13 +10,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ReservationPopupComponent {
 
-  private usersUrl: string;
-  userSer!: UserService;
-  guestOptions: number[] = [0, 1, 2, 3, 4];
+  // userSer:UserService;
+  private usersUrl: String;
+  guestOptions: number[] = [ 1, 2, 3, 4];
 
   
   constructor(private http: HttpClient) { 
-    this.usersUrl = 'http://localhost:8080/reservations/save';
+    this.usersUrl = "http://localhost:8080/reservations/save";
   }
 
   reservationForm = new FormGroup({
@@ -30,8 +30,8 @@ export class ReservationPopupComponent {
     this.reservationPayload = this.reservationForm.getRawValue();
     
     console.log(this.reservationForm.value);
-
-    return this.http.post<any>(this.usersUrl, this.reservationForm.value)
+    //userSer.save()
+    return this.http.post<any>("http://localhost:8080/reservations/save", this.reservationForm.value)
     .subscribe(
       response => {
         console.log('API post successful:', response);

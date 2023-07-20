@@ -1,27 +1,27 @@
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
     
     <mat-form-field>
-        <input formControlName="startDate" matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" name="startDate">
+        <input formControlName="startDate" matInput [matDatepicker]="startDatePicker" placeholder="Başlangıç Tarihi" name="startDate" required>
         <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #startDatePicker></mat-datepicker>
       </mat-form-field>
     
       <mat-form-field>
-        <input matInput formControlName="endDate" [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" name="endDate">
+        <input matInput formControlName="endDate" [matDatepicker]="endDatePicker" placeholder="Bitiş Tarihi" name="endDate" required>
         <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #endDatePicker></mat-datepicker>
       </mat-form-field>
       
     
-    <mat-form-field>
+    <mat-form-field >
       <mat-select formControlName="customerCount">
-        <mat-option *ngFor="let option of guestOptions" [value]="option">
+        <mat-option *ngFor="let option of guestOptions" [value]="option" >
           {{option}}
         </mat-option>
       </mat-select>
     </mat-form-field>
       
   
-    <button type="submit">Filtrele</button>
+    <button type="submit" routerLink="/rezervasyon" class="filter-btn">Filtrele</button>
   </form>
   

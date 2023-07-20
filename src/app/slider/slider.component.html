@@ -1,6 +1,11 @@
-<div class="slider">
-    <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
-      <img [src]="'assets/slides/' + image" alt="Slide {{ i + 1 }}">
+<div class="slider-container">
+  <div class="slider" *ngFor="let image of images; let i = index">
+    <div class="slide">
+      <img *ngIf="i===currentIndex" [src]="image.src" [alt]="'Slide' + (i + 1)">
     </div>
   </div>
-  
+  <div class="slider-controls">
+    <button class="prev-btn" (click)="showPreviousSlide()">&#10094;</button>
+    <button class="next-btn" (click)="showNextSlide()">&#10095;</button>
+  </div>
+</div>

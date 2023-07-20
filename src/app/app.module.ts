@@ -14,7 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { RezervationComponent } from './rezervation/rezervation.component';
 import { HomeComponent } from './home/home.component';
-import { ReservationInquiryComponent } from './reservation-inquiry/reservation-inquiry.component';
+import { ReservationQueryComponent } from './reservation-query/reservation-query.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,7 +26,7 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { ReservationPopupComponent } from './reservation-popup/reservation-popup.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ReservationQueryService} from "./reservation-inquiry.service";
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -45,7 +45,7 @@ const routes: Routes = [
     ContactComponent,
     RezervationComponent,
     HomeComponent,
-    ReservationInquiryComponent,
+    ReservationQueryComponent,
     RoomsComponent,
     ReservationPopupComponent,
     
@@ -65,7 +65,7 @@ const routes: Routes = [
     MatSelectModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ReservationQueryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

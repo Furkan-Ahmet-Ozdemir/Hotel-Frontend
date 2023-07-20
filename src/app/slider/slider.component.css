@@ -1,21 +1,42 @@
 .slider {
-    position: relative;
-    width: 100%;
-    height: 74%;
-    overflow: hidden;
-  }
-  
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .slide.active {
-    opacity: 1;
-  }
-  
+  display: flex;
+  transition: transform 0.5s ease; /* Add a smooth transition effect */
+}
+
+.slide {
+  flex: 0 0 100%; /* Ensure the slides occupy the full container width */
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 74%;
+  overflow: hidden;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+.prev-btn,
+.next-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}

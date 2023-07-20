@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { RezervationComponent } from './rezervation/rezervation.component';
-import { ReservationInquiryComponent } from './reservation-inquiry/reservation-inquiry.component';
 import { RoomsComponent } from './rooms/rooms.component';
-
+import { ReservationQueryComponent } from "./reservation-query/reservation-query.component";
 
 const routes: Routes =[
   {
@@ -33,7 +32,7 @@ const routes: Routes =[
     
   {
     path: 'rezervasyon-sorgulama',
-    component: ReservationInquiryComponent
+    component: ReservationQueryComponent
   },
   {
     path: 'odalar',

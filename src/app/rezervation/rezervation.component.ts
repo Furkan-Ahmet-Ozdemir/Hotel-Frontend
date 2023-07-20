@@ -19,7 +19,7 @@ interface Room {
   styleUrls: ['./rezervation.component.css'],
 })
 export class RezervationComponent{
-
+  guestOptions: number[] = [1, 2, 3, 4];
   user: User;
   reservat: ReservationCheck = new ReservationCheck;
 

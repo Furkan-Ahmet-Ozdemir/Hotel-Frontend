@@ -1,0 +1,18 @@
+<!-- reservation-query.component.html -->
+<app-navbar> </app-navbar>
+<div class="reservation-query">
+    <input type="text" [(ngModel)]="reservationCode" placeholder="Rezervasyon Kodu">
+    <button (click)="queryReservation()">Sorgula</button>
+</div>
+
+<!-- Kullanıcıya ait bilgilerin gösterileceği alan -->
+<div *ngIf="showUserInfo">
+    <p>Ad: {{ userInfo.name }}</p>
+    <p>Soyad: {{ userInfo.surname }}</p>
+    <p>Email: {{ userInfo.email }}</p>
+    <p>Telefon: {{ userInfo.phoneNumber }}</p>
+    <p>Kimlik Numarası: {{ userInfo.identityNumber }}</p>
+    <!-- Kullanıcının rezervasyon tarih aralığı ve kişi sayısı gibi bilgileri buraya ekleyebilirsiniz. -->
+</div>
+
+<app-footer></app-footer>

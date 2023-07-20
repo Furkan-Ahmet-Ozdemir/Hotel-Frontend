@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isPopupVisible = false;
+  isMenuOpen = false;
 
-  showPopup() {
-    this.isPopupVisible = true;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }
