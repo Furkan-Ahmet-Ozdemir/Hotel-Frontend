@@ -172,13 +172,27 @@
                         </mat-select>
                       </mat-form-field>
                     <input type="text" name="name" id="name" formControlName="name" placeholder="Adınız">
-                    <input type="text" name="form-surname" [(ngModel)]="surName" placeholder="Soyadınız">
+                    <input type="text" name="form-surname" formControlName="surName" placeholder="Soyadınız">
                 </div>
+
+
+                <div>
+                <mat-form-field  >
+                  <mat-label>Oda ID</mat-label>
+                  <mat-select formControlName="roomTypeId">
+                    
+                      <mat-option *ngFor="let option of roomOptions" [value]="option" >
+                      {{option}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
     
                 <div class="form-group">
-                    <input type="text" name="form-phone" [(ngModel)]="phoneNumber" placeholder="Telefon numarası" maxlength="11">
-                    <input type="text" name="form-tc" [(ngModel)]="tc" placeholder="T.C. Kimlik No" maxlength="11">
-                    <input type="email" name="form-email" [(ngModel)]="email" placeholder="Email Adresiniz">
+                    <input type="text" name="form-phone" formControlName="phoneNumber" placeholder="Telefon numarası" maxlength="11">
+                    <input type="text" name="form-tc" formControlName="tc" placeholder="T.C. Kimlik No" maxlength="11">
+                    <input type="email" name="form-email" formControlName="email" placeholder="Email Adresiniz">
                 </div>
             </fieldset>
             <input type="submit" value="Gönder" class="rezervation-btn">

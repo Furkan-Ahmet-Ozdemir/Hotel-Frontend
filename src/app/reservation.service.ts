@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReservationCheck } from './models/reservationcheck.model';
+import { ReservationModel } from './models/reservation-send.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class ReservationService {
   }
 
 
-  public sendReservation(reservationcheck: ReservationCheck):any {
+  public sendReservation(reservationcheck: ReservationModel):any {
     console.log(reservationcheck);
 
     return this.http.post<any>(this.usersUrl, reservationcheck)

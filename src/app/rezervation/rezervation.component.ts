@@ -6,6 +6,8 @@ import { ReservationService } from '../reservation.service';
 import { ReservationCheck } from '../models/reservationcheck.model';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ReservationModel } from '../models/reservation-send.model';
 
 interface Room {
   image: string;
@@ -23,23 +25,36 @@ export class RezervationComponent implements OnInit {
   startDatePicker: any;
   endDatePicker: any;
   guestOptions: number[] = [1, 2, 3, 4];
+  roomOptions: number[] = [48, 49, 50, 52,53];
   user: User;
   reservat: ReservationCheck = new ReservationCheck; 
+  reservation: ReservationModel = new ReservationModel;
+  private usersUrl: string;
 
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
     private userService: UserService,
-    private reserV : ReservationService) {
+    private reserV : ReservationService,
+    private http: HttpClient) {
     this.user = new User();
+    this.usersUrl = 'http://localhost:8080/reservations/save';
   }
+
+  
 
   form = new FormGroup({
     checkInDate: new FormControl('', Validators.required),
     checkOutDate: new FormControl(''),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    customerCount: new FormControl('')
+    surName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    phoneNumber: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    tc: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    customerCount: new FormControl(''),
+    roomTypeId: new FormControl('')
+
   })
 
   sendCustomerInfo(data: any){
@@ -61,9 +76,20 @@ export class RezervationComponent implements OnInit {
 
   sendName(){
     console.log(this.form.getRawValue())
+    this.form.getRawValue().roomTypeId =  "48";
 
+    
     if (this.form.valid) {
       // this.reserV.sendReservation(this.form.getRawValue())
+      this.http.post<ReservationModel>("http://localhost:8080/reservations/save",this.form.getRawValue()).subscribe(
+      (response) => {
+        this.reservation = response; // Backendden gelen user nesnelerini users değişkenine ata
+        console.log(response);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
     }
   }
   
